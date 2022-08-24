@@ -1,6 +1,7 @@
-import { DataSource } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-const dataSource = new DataSource({
+const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 41234,
@@ -9,6 +10,13 @@ const dataSource = new DataSource({
   database: 'nest_sample_dev',
   migrations: [`migrations/*.ts`],
   migrationsTableName: 'migrations',
-});
+};
 
-export { dataSource };
+const dataSource = new DataSource(dataSourceOptions);
+
+const typeOrmModuleOptions: TypeOrmModuleOptions = {
+  ...dataSourceOptions,
+  autoLoadEntities: true,
+};
+
+export { dataSource, typeOrmModuleOptions };
