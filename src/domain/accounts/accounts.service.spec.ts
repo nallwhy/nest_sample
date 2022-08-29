@@ -4,7 +4,7 @@ import { AccountsService } from './accounts.service';
 import { User } from './entities/user.entity';
 
 describe('listUsers/0', () => {
-  let dataSource;
+  let dataSource: DataSource;
 
   beforeEach(async () => {
     dataSource = new DataSource({
