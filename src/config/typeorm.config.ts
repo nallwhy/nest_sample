@@ -8,7 +8,7 @@ const dataSourceOptions: DataSourceOptions = {
   username: 'postgres',
   password: 'postgres',
   database: 'nest_sample_dev',
-  migrations: [`migrations/*.ts`],
+  migrations: [`dist/migrations/*.js`],
   migrationsTableName: 'migrations',
 };
 
