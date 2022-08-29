@@ -22,4 +22,4 @@ const typeOrmModuleOptions: TypeOrmModuleOptions = {
   autoLoadEntities: true,
 };
 
-export { dataSource, typeOrmModuleOptions };
+export { dataSourceOptions, dataSource, typeOrmModuleOptions };
