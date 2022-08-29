@@ -1,14 +1,17 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { config } from 'dotenv';
+
+config({ path: `.env.${process.env.NODE_ENV || 'dev'}` });
 
 const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: 41234,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'nest_sample_dev',
-  migrations: [`dist/migrations/*.js`],
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT),
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  migrations: ['dist/migrations/*.js'],
   migrationsTableName: 'migrations',
 };
 
