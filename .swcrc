@@ -8,7 +8,8 @@
       "legacyDecorator": true,
       "decoratorMetadata": true,
       "react": {
-        "runtime": "automatic"
+        "runtime": "automatic",
+        "importSource": "jsxte"
       }
     }
   }
