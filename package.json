@@ -68,7 +68,7 @@
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
-      "^.+\\.(t|j)sx?$": "ts-jest"
+      "^.+\\.(t|j)sx?$": "@swc/jest"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)sx?"
